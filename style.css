@@ -1,0 +1,148 @@
+body {
+    background-image: url("./img/us.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0; /* Varsayılan margin'i kaldır */
+}
+
+.container {
+    width: 90%; /* Mobilde genişlik %90 olacak */
+    max-width: 400px; /* Maksimum genişlik */
+    background-color: rgba(255, 255, 255, 0.8); /* Card'ın arka plan rengi */
+    border-radius: 10px; /* Card'ın köşelerini yuvarla */
+    padding: 20px; /* İç boşluk */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+}
+
+#progress .times,
+.card-footer,
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.volume-container i {
+    margin-right: 5px;
+}
+
+/* Başlık Container */
+.title {
+    position: relative; /* Profil fotoğrafını bu container içinde konumlandır */
+    text-align: center; /* Yazıyı ve fotoğrafı ortala */
+}
+
+/* Profil Fotoğrafı Container */
+.profile-image-container {
+    position: absolute; /* Mutlak konumlandırma */
+    top: -60px; /* Yazının üzerine yerleştir */
+    left: 50%; /* Yatayda ortala */
+    transform: translateX(-50%); /* Tam ortalamak için */
+}
+
+/* Profil Fotoğrafı */
+.profile-image {
+    margin-top: 3.4em;
+    width: 100px; /* Mobilde daha küçük boyut */
+    height: 100px; /* Mobilde daha küçük boyut */
+    border-radius: 50%; /* Yuvarlak yap */
+    border: 4px solid white; /* Beyaz çerçeve */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+    object-fit: cover; /* Görseli orantılı şekilde sığdır */
+}
+
+/* Başlık Stili */
+.stylish-title {
+
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem; /* Mobilde daha küçük font boyutu */
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 3.4em;
+    padding: 10px 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Kayan Metin Container */
+#scrolling-text-container {
+    width: 100%; /* Container genişliği */
+    overflow: hidden; /* Taşan metni gizle */
+    white-space: nowrap; /* Metni tek satırda tut */
+    margin-top: 10px; /* Başlık ile arasına boşluk ekle */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı şeffaf arka plan */
+    padding: 10px; /* İç boşluk */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    position: relative; /* Konumlandırma için */
+}
+
+/* Kayan Metin */
+#scrolling-text {
+    display: inline-block;
+    padding-left: 100%; /* Metni başlangıçta sağa kaydır */
+    animation: scroll-text 15s linear infinite; /* Animasyon süresi */
+    font-size: 1em; /* Font boyutu */
+    color: white; /* Metin rengi */
+    white-space: nowrap; /* Metni tek satırda tut */
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0); /* Başlangıç pozisyonu */
+    }
+    100% {
+        transform: translateX(-100%); /* Bitiş pozisyonu */
+    }
+}
+
+/* Card Stili */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Card'ın arka plan rengi */
+    border-radius: 10px; /* Card'ın köşelerini yuvarla */
+    padding: 15px; /* Mobilde daha küçük iç boşluk */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+}
+
+/* Responsive Tasarım için Media Query */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Mobilde genişlik %95 olacak */
+        padding: 15px; /* Mobilde daha küçük iç boşluk */
+    }
+
+    .profile-image {
+        width: 80px; /* Mobilde daha küçük boyut */
+        height: 80px; /* Mobilde daha küçük boyut */
+    }
+
+    .stylish-title {
+        font-size: 1.5rem; /* Mobilde daha küçük font boyutu */
+    }
+
+    #scrolling-text {
+        font-size: 0.9em; /* Mobilde daha küçük font boyutu */
+    }
+
+    .card {
+        padding: 10px; /* Mobilde daha küçük iç boşluk */
+    }
+}
